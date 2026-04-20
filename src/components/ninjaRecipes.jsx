@@ -1,15 +1,17 @@
+import imgOne from "../assets/tofu.jpeg";
+
 export default function NinjaRecipes() {
   return (
-    <div>
+    <div className="text-gray-600">
       <div>
         <nav>
           <div>
-            <h1>
+            <h1 className="font-bold uppercase p-4 border-b border">
               <a href="/">Food Ninja</a>
             </h1>
           </div>
           <ul>
-            <li>
+            <li className="text-gray-700 font-bolder-gray-100">
               <a href="#">
                 <span>Home</span>
               </a>
@@ -28,22 +30,23 @@ export default function NinjaRecipes() {
         </nav>
       </div>
 
-      <main>
+      <main className="px-16 py-6">
         <div>
           <a href="">Login</a>
           <a href="">Sign up</a>
         </div>
         <header>
-          <h2>Recipes</h2>
-          <h2>For Ninjas</h2>
+          <h2 className="text-gray-700 text-6xl font-semibold">Recipes</h2>
+          <h2 className="text-2xl font-semibold">For Ninjas</h2>
         </header>
 
         <div>
-          <h4>Latest Recipes</h4>
-          <div>
+          <h4 className="font-bold mt-12 pb-2 border-b">Latest Recipes</h4>
+
+          <div className="mt-8 ">
             {/* cards */}
             <div>
-              <img src="" alt="" srcset="" />
+              <img src={imgOne} alt="Tofu Stir Fry" />
               <div>
                 <span>5 Bean Chilli Stew</span>
                 <span>Recipe by Mario</span>
@@ -53,8 +56,10 @@ export default function NinjaRecipes() {
         </div>
 
         <div>
-          <h4>Most Popular</h4>
-          <div>{/* cards */}</div>
+          <h4 className="font-bold mt-12 pb-2 border-b border-gray-200">
+            Most Popular
+          </h4>
+          <div className="mt-8">{/* cards */}</div>
 
           <div>
             <div>Load More</div>
