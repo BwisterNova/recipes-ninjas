@@ -2,7 +2,7 @@ import imgOne from "../assets/tofu.jpeg";
 
 export default function NinjaRecipes() {
   return (
-    <div className="text-gray-600">
+    <div className="text-gray-600 font-body">
       <div>
         <nav>
           <div>
@@ -32,8 +32,12 @@ export default function NinjaRecipes() {
 
       <main className="px-16 py-6">
         <div>
-          <a href="">Login</a>
-          <a href="">Sign up</a>
+          <a href="" className="text-primary">
+            Login
+          </a>
+          <a href="" className="text-primary">
+            Sign up
+          </a>
         </div>
         <header>
           <h2 className="text-gray-700 text-6xl font-semibold">Recipes</h2>
@@ -62,7 +66,7 @@ export default function NinjaRecipes() {
           <div className="mt-8">{/* cards */}</div>
 
           <div>
-            <div>Load More</div>
+            <div className="bg-secondary-100 text-secondary-200">Load More</div>
           </div>
         </div>
       </main>
