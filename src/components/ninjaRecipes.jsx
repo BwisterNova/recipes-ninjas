@@ -7,7 +7,12 @@ export default function NinjaRecipes() {
         <nav>
           <div>
             <h1 className="font-bold uppercase p-4 border-b border">
-              <a href="/">Food Ninja</a>
+              <a
+                href="/"
+                // className="text-green-500 sm:text-red-500 lg:text-blue-500 or text-sm md:text-xl "
+              >
+                Food Ninja
+              </a>
             </h1>
           </div>
           <ul>
@@ -30,12 +35,13 @@ export default function NinjaRecipes() {
         </nav>
       </div>
 
-      <main className="px-16 py-6">
-        <div>
+      {/* Main  */}
+      <main className="px-16 py-6 bg-gray-100">
+        <div className="flex justify-center md:justify-end">
           <a href="" className="text-primary">
             Login
           </a>
-          <a href="" className="text-primary">
+          <a href="" className="text-primary ml-2">
             Sign up
           </a>
         </div>
@@ -49,11 +55,21 @@ export default function NinjaRecipes() {
 
           <div className="mt-8 ">
             {/* cards */}
-            <div>
-              <img src={imgOne} alt="Tofu Stir Fry" />
-              <div>
-                <span>5 Bean Chilli Stew</span>
-                <span>Recipe by Mario</span>
+            <div className="bg-white rounded overflow-hidden shadow-md relative">
+              <img
+                src={imgOne}
+                alt="Tofu Stir Fry"
+                className="w-full h-32 sm:h-48 object-cover"
+              />
+              <div className="m-4 ">
+                <span className="font-bold">5 Bean Chilli Stew</span>
+                <span className="block text-grey-500 text-sm">
+                  Recipe by Mario
+                </span>
+              </div>
+              {/* For badge */}
+              <div className="bg-secondary-100 text-secondary-200 uppercase text-xs font-bold rounded-full p-2 absolute top-0  ml-2 mt-2">
+                <span>25 min</span>
               </div>
             </div>
           </div>
@@ -65,7 +81,7 @@ export default function NinjaRecipes() {
           </h4>
           <div className="mt-8">{/* cards */}</div>
 
-          <div>
+          <div className="flex justify-center">
             <div className="bg-secondary-100 text-secondary-200">Load More</div>
           </div>
         </div>
