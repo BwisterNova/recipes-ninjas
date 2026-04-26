@@ -1,9 +1,35 @@
 import imgOne from "../assets/tofu.jpeg";
 import imgTwo from "../assets/pea.jpeg";
 import imgThree from "../assets/curry.jpeg";
+import { Clock, Home, Info, Mail } from "lucide-react";
 
 export default function NinjaRecipes() {
-  // array of object of cards will be here after learing the tutors method arrange the cards in arry of method way
+  // array of object for cards
+  const Card = [
+    {
+      id: 1,
+      title: "5 Bean Chilli Stew",
+      src: imgOne,
+      time: "25 Min",
+      detail: "Recipe by Mario",
+    },
+
+    {
+      id: 2,
+      title: "Pea noodles",
+      src: imgTwo,
+      time: "25 Min",
+      detail: "Recipe by Mario",
+    },
+
+    {
+      id: 3,
+      title: "Tofu Curry",
+      src: imgThree,
+      time: "25 Min",
+      detail: "Recipe by Mario",
+    },
+  ];
 
   return (
     <div className="text-gray-600 font-body grid md:grid-cols-3">
@@ -14,6 +40,7 @@ export default function NinjaRecipes() {
               <a
                 href="/"
                 // className="text-green-500 sm:text-red-500 lg:text-blue-500 or text-sm md:text-xl "
+                className="hover:text-gray-700"
               >
                 Food Ninja
               </a>
@@ -23,16 +50,19 @@ export default function NinjaRecipes() {
             <li className="text-gray-700 font-bolder-gray-100">
               <a href="#">
                 <span>Home</span>
+                <Home className="w-5" />
               </a>
             </li>
             <li>
               <a href="#">
                 <span>About</span>
+                <Info className="w-5" />
               </a>
             </li>
             <li>
               <a href="#">
                 <span>Contact</span>
+                <Mail className="w-5" />
               </a>
             </li>
           </ul>
@@ -42,12 +72,15 @@ export default function NinjaRecipes() {
       {/* Main  */}
       <main className="px-16 py-6 bg-gray-100 md:col-span-2">
         <div className="flex justify-center md:justify-end">
-          <a href="" className="text-primary btn border-primary md:border-2">
+          <a
+            href=""
+            className="text-primary btn border-primary md:border-2 hover:bg-primary hover:text-white"
+          >
             Login
           </a>
           <a
             href=""
-            className="text-primary ml-2 btn border-primary md:border-2"
+            className="text-primary ml-2 btn border-primary md:border-2 hover:bg-primary hover:text-white"
           >
             Sign up
           </a>
@@ -62,7 +95,7 @@ export default function NinjaRecipes() {
 
           <div className="mt-8 grid lg:grid-cols-3 gap-10 ">
             {/* card 1 */}
-            <div className="card">
+            <div className="card hover:shadow-lg">
               <img
                 src={imgOne}
                 alt="Tofu Stir Fry"
@@ -76,11 +109,12 @@ export default function NinjaRecipes() {
               </div>
               {/* For badge */}
               <div className="badge">
-                <span>25 min</span>
+                <Clock className="w-5 inline-block" />
+                <span> 25 min</span>
               </div>
             </div>
             {/* card 2 */}
-            <div className="card">
+            <div className="card hover:shadow-lg">
               <img
                 src={imgTwo}
                 alt="Pea"
@@ -94,11 +128,12 @@ export default function NinjaRecipes() {
               </div>
               {/* For badge */}
               <div className="badge">
+                <Clock className="w-5 inline-block" />
                 <span>25 min</span>
               </div>
             </div>
             {/* card 3 */}
-            <div className="card">
+            <div className="card hover:shadow-lg">
               <img
                 src={imgThree}
                 alt="curry"
@@ -112,6 +147,7 @@ export default function NinjaRecipes() {
               </div>
               {/* For badge */}
               <div className="badge">
+                <Clock className="w-5 inline-block" />
                 <span>25 min</span>
               </div>
             </div>
@@ -125,7 +161,7 @@ export default function NinjaRecipes() {
           <div className="mt-8">{/* cards */}</div>
 
           <div className="flex justify-center">
-            <div className="bg-secondary-100 text-secondary-200 btn">
+            <div className="bg-secondary-100 text-secondary-200 btn hover:shadow-inner">
               Load More
             </div>
           </div>
