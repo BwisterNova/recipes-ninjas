@@ -1,7 +1,17 @@
 import imgOne from "../assets/tofu.jpeg";
 import imgTwo from "../assets/pea.jpeg";
 import imgThree from "../assets/curry.jpeg";
-import { Clock, Home, Info, Mail } from "lucide-react";
+import {
+  Clock,
+  Delete,
+  Home,
+  Info,
+  Mail,
+  Menu,
+  SidebarClose,
+  X,
+} from "lucide-react";
+import { useState } from "react";
 
 export default function NinjaRecipes() {
   // array of object for cards
@@ -31,11 +41,17 @@ export default function NinjaRecipes() {
     },
   ];
 
+  const [navIcon, setNavIcon] = useState(false);
+
+  function handleNavIcon() {
+    setNavIcon(!navIcon);
+  }
+
   return (
     <div className="text-gray-600 font-body grid md:grid-cols-3">
-      <div className="md:cols-span-1">
-        <nav>
-          <div>
+      <div className="md:cols-span-1 md:flex md:justify-end">
+        <nav className="text-right">
+          <div className="flex justify-between items-center">
             <h1 className="font-bold uppercase p-4 border-b border">
               <a
                 href="/"
@@ -45,27 +61,48 @@ export default function NinjaRecipes() {
                 Food Ninja
               </a>
             </h1>
+
+            {/* The tooglr open and close nav */}
+            <div
+              className="px-4 cursor-pointer md:hidden"
+              id="burger"
+              onClick={handleNavIcon}
+            >
+              {navIcon ? <X className="w-6" /> : <Menu className="w-6" />}
+            </div>
           </div>
-          <ul>
-            <li className="text-gray-700 font-bolder-gray-100">
-              <a href="#">
-                <span>Home</span>
-                <Home className="w-5" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>About</span>
-                <Info className="w-5" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>Contact</span>
-                <Mail className="w-5" />
-              </a>
-            </li>
-          </ul>
+
+          {navIcon && (
+            <ul className="text-sm mt-6 hidden md:block" id="menu ">
+              <li className="text-gray-700 font-bolder-gray-100 py-1">
+                <a
+                  href="#"
+                  className="px-4 flex justify-end border-r-4 border-primary"
+                >
+                  <span>Home</span>
+                  <Home className="w-5 ml-2" />
+                </a>
+              </li>
+              <li py-1>
+                <a
+                  href="#"
+                  className="px-4 flex justify-end border-r-4 border-white"
+                >
+                  <span>About</span>
+                  <Info className="w-5 ml-2" />
+                </a>
+              </li>
+              <li py-1>
+                <a
+                  href="#"
+                  className="px-4 flex justify-end border-r-4 border-white"
+                >
+                  <span>Contact</span>
+                  <Mail className="w-5 ml-2" />
+                </a>
+              </li>
+            </ul>
+          )}
         </nav>
       </div>
 
