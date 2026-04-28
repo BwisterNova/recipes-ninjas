@@ -72,37 +72,38 @@ export default function NinjaRecipes() {
             </div>
           </div>
 
-          {navIcon && (
-            <ul className="text-sm mt-6 hidden md:block" id="menu ">
-              <li className="text-gray-700 font-bolder-gray-100 py-1">
-                <a
-                  href="#"
-                  className="px-4 flex justify-end border-r-4 border-primary"
-                >
-                  <span>Home</span>
-                  <Home className="w-5 ml-2" />
-                </a>
-              </li>
-              <li py-1>
-                <a
-                  href="#"
-                  className="px-4 flex justify-end border-r-4 border-white"
-                >
-                  <span>About</span>
-                  <Info className="w-5 ml-2" />
-                </a>
-              </li>
-              <li py-1>
-                <a
-                  href="#"
-                  className="px-4 flex justify-end border-r-4 border-white"
-                >
-                  <span>Contact</span>
-                  <Mail className="w-5 ml-2" />
-                </a>
-              </li>
-            </ul>
-          )}
+          {/* Responsive Menu - CSS Controlled */}
+          <ul
+            className={`text-sm mt-6 ${navIcon ? "block" : "hidden"} md:block`}
+          >
+            <li className="text-gray-700 font-bolder-gray-100 py-1">
+              <a
+                href="#"
+                className="px-4 flex justify-end border-r-4 border-primary"
+              >
+                <span>Home</span>
+                <Home className="w-5 ml-2" />
+              </a>
+            </li>
+            <li py-1>
+              <a
+                href="#"
+                className="px-4 flex justify-end border-r-4 border-white"
+              >
+                <span>About</span>
+                <Info className="w-5 ml-2" />
+              </a>
+            </li>
+            <li py-1>
+              <a
+                href="#"
+                className="px-4 flex justify-end border-r-4 border-white"
+              >
+                <span>Contact</span>
+                <Mail className="w-5 ml-2" />
+              </a>
+            </li>
+          </ul>
         </nav>
       </div>
 
@@ -111,13 +112,13 @@ export default function NinjaRecipes() {
         <div className="flex justify-center md:justify-end">
           <a
             href=""
-            className="text-primary btn border-primary md:border-2 hover:bg-primary hover:text-white"
+            className="text-primary btn border-primary md:border-2 hover:bg-primary hover:text-white transition ease-out duration-500"
           >
             Login
           </a>
           <a
             href=""
-            className="text-primary ml-2 btn border-primary md:border-2 hover:bg-primary hover:text-white"
+            className="text-primary ml-2 btn border-primary md:border-2 hover:bg-primary hover:text-white  transition ease-out duration-500"
           >
             Sign up
           </a>
@@ -198,7 +199,7 @@ export default function NinjaRecipes() {
           <div className="mt-8">{/* cards */}</div>
 
           <div className="flex justify-center">
-            <div className="bg-secondary-100 text-secondary-200 btn hover:shadow-inner">
+            <div className="bg-secondary-100 text-secondary-200 btn hover:shadow-inner transform hover:scale-125 hover:bg-opacity-50 transition ease-out duration-300">
               Load More
             </div>
           </div>
